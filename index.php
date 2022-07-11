@@ -152,10 +152,28 @@ $Faq_Google = [
 
 
     <!-- container with title and paragraph -->
-    <div>
+    <div class="container my-4">
 
     <!-- here i will use foreach -->
-    
+
+    <?php
+        foreach ($Faq_Google as $answer) {
+            ?>
+            <div>
+            <?php
+                echo "<". $answer['title']['tag'] .">". $answer['title']['textTitle'] ."</". $answer['title']['tag'] .">";
+            
+            // i'm using a second foreach to stamp my paragraph
+            
+            foreach ($answer['paragraph'] as $paragraph){
+                echo "<p>". $paragraph ."</p>";
+            }
+                ?>
+
+                </div>
+            <?php
+        }
+            ?>
     </div>
         
     
